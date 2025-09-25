@@ -42,10 +42,10 @@ const Portfolio = () => {
   {Links.map((link, index) => (
     <li key={index}>
       <ScrollLink
-        to={link.link}        // tanpa #
+        to={link.link}       
         smooth={true}
         duration={500}
-        offset={-70}          // biar ga ketutup navbar
+        offset={-70}          
         onClick={() => setOpen(false)}
         className="cursor-pointer hover:text-slate-500"
       >
@@ -57,7 +57,7 @@ const Portfolio = () => {
         </div>
 
         <div className="flex items-center gap-5" >
-          <a href="/Putih Minimalis Sederhana Profesional Administrasi Perkantoran Resume.pdf" download="CV-Danish-Azka-Rahmat.pdf">
+          <a href="/CV-Danish-Azka-Rahmat.pdf" download="CV-Danish-Azka-Rahmat.pdf">
             <button className="md:px-5 rounded-xl text-xs py-2 px-2  text-white font-semibold bg-orange-400">Download CV</button>
           </a>
           <div
@@ -70,7 +70,7 @@ const Portfolio = () => {
       </div>
 
       {/* Home */}
-      <div  id="Home"className="w-[92%] mx-auto flex flex-col md:flex-row justify-center items-center pt-4 md:pt-18 ">
+      <div  id="Home"className="w-[92%] mx-auto flex flex-col md:flex-row justify-center gap-5 md:gap-0 items-center pt-15 md:pt-18 ">
         <div className="md:w-3/5 top">
           <div className="flex flex-col gap-3">
             <p className="text-xs md:text-base font-medium text-black">Hi I am</p>
@@ -91,12 +91,8 @@ const Portfolio = () => {
               Front-End <br />
               <div>Developer</div>
             </h1>
-            <p className="md:pt-2">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              nisi tenetur itaque ut ipsa eligendi eaque voluptate, optio illo
-              maxime iste aut doloribus aliquid minima reprehenderit sit libero
-              voluptas ratione.
-            </p>
+            <p className="pt-6 md:pt-2">
+              I am Danish Azka Rahmat, a passionate <b>Front-End Developer</b> born in Jakarta on October 24, 2007. I started my tech journey at SMK Letris Indonesia 2 in <b>Software Engineering</b> and now pursue a <b>Bachelor’s degree in Informatics at Universitas Pembangunan Jaya</b>. With a strong interest in programming, Artificial Intelligence, and Cybersecurity, I focus on creating modern, responsive, and user-friendly web applications while striving to grow as a versatile technologist ready for future challenges.            </p>
             <button className="md:w-1/3 text-m rounded-xl py-1 text-white font-semibold  bg-orange-400">
               Hire Me
             </button>
@@ -104,7 +100,7 @@ const Portfolio = () => {
         </div>
 
         <div className="md:w-2/5 flex justify-center">
-          <div className="md:w-4/5 flex justify-center bot flex-col gap-2">
+          <div className="md:w-4/5 flex justify-center bot flex-col gap-7">
             <img src={gw} alt="Danish Azka Rahmat" />
 
             <div className="flex justify-center items-center gap-4">
@@ -143,24 +139,24 @@ const Portfolio = () => {
       </div>
 
       {/* Skills */}
-      <div  id="Skills"className='w-[92%] mx-auto flex flex-col justify-center items-center md:mt-13 overflow-x-hidden'>
-        <p link className='text-4xl md:text-3xl  font-semibold'>Skills</p>
+      <div  id="Skills"className='mt-9 md:mt-0 w-[92%] mx-auto flex flex-col justify-center items-center md:mt-13 overflow-x-hidden gap-5 md:gap-0'>
+        <p link className='text-3xl md:text-2xl  font-semibold'>Skills And Technology</p>
         <p className='text-l '>“Here are the Skills I offer to help you create impactful, responsive, and user-friendly digital experiences."</p>
 
-        <div className="grid mt-4 md:mt-0 md:grid-cols-3 gap-6 w-full md:p-6 ">
+        <div className="grid mt-4 md:mt-0 md:grid-cols-3 gap-10 md:gap-6 w-full md:p-6 ">
             <div className="shadow-md p-5 rounded-lg border">
                 <h3 className="text-xl font-bold mb-2 flex items-center justify-between">Web Developing <FaLaptopCode className='text-2xl'/></h3>
-                <div className='flex items-center justify-center gap-5 text-6xl flex-wrap'><LiaJs color='#F0DB4F'/> <LiaHtml5 color='#E34C26'/> <LiaCss3 color='#264DE4'/>  <LiaReact color='#61DBFB'/> </div>
+                <div className='flex items-center justify-center gap-5 text-5xl md:text-6xl flex-wrap'><LiaJs color='#F0DB4F'/> <LiaHtml5 color='#E34C26'/> <LiaCss3 color='#264DE4'/>  <LiaReact color='#61DBFB'/> </div>
             </div>
 
             <div className="shadow-md p-5 rounded-lg border">
                 <h3 className="text-xl font-bold mb-2 flex items-center justify-between">API Integration <VscGistSecret className='text-2xl'/></h3>
-                <div className='flex items-center justify-center gap-5 text-6xl flex-wrap'><LiaJs color='#F0DB4F'/> <SiExpress/> <SiSequelize color='#007FFF'/> <SiPostman color='#EF5B25'/></div>
+                <div className='flex items-center justify-center gap-5 text-5xl md:text-6xl flex-wrap'><LiaJs color='#F0DB4F'/> <SiExpress/> <SiSequelize color='#007FFF'/> <SiPostman color='#EF5B25'/></div>
             </div>
 
             <div className="shadow-md p-5 rounded-lg border">
                 <h3 className="text-xl font-bold mb-2 flex items-center justify-between">Responsive Design <PiDeviceRotateBold className='text-2xl'/></h3>
-                <div className='flex items-center justify-center gap-5 text-6xl flex-wrap'><LiaHtml5 color='#E34C26'/> <LiaCss3 color='#264DE4'/>  <FaBootstrap color='#563D7C' /> <RiTailwindCssFill color='#61DBFB'/> </div>
+                <div className='flex items-center justify-center gap-5 text-5xl md:text-6xl flex-wrap'><LiaHtml5 color='#E34C26'/> <LiaCss3 color='#264DE4'/>  <FaBootstrap color='#563D7C' /> <RiTailwindCssFill color='#61DBFB'/> </div>
             </div>
 
 
@@ -168,13 +164,13 @@ const Portfolio = () => {
       </div>
 
       {/* Projects */}
-       <div id="Projects" className='w-[92%] mx-auto flex flex-col gap-2 justify-center items-center md:mt-13'>
+       <div id="Projects" className='w-[92%] mx-auto flex flex-col gap-2 justify-center items-center mt-16 md:mt-8'>
         <p link className='text-4xl md:text-3xl  font-semibold'>My Projects</p>
         <p className='text-l '>“Here are the Skills I offer to help you create impactful, responsive, and user-friendly digital experiences."</p>
-        <div className="grid md:grid-cols-3 gap-6 p-6 h-100 ">
+        <div className="grid md:grid-cols-3 gap-10 md:gap-6 p-6 md:h-100 ">
 
             <div className=" flex flex-col justify-center w-full rounded-lg ">
-              <div className="text-xl  font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg bg-orange-200">
+              <div className="text-xl  font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg p-8 bg-orange-200">
               </div>
               <div className=' md:h-1/5'>
                 <p className='text-xs text-orange-400'>Landing Page</p>
@@ -190,7 +186,7 @@ const Portfolio = () => {
               </div>
             </div>
             <div className=" flex flex-col justify-center  rounded-lg ">
-              <div className="text-xl font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg bg-orange-200">
+              <div className="text-xl font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg p-8 bg-orange-200">
               </div>
               <div className=' md:h-1/5'>
                 <p className='text-xs text-orange-400'>Crud Implemtation</p>
@@ -206,7 +202,7 @@ const Portfolio = () => {
               </div>
             </div>
             <div className=" flex flex-col justify-center  rounded-lg ">
-              <div className="text-xl font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg bg-orange-200">
+              <div className="text-xl font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg p-8 bg-orange-200">
               </div>
               <div className=' md:h-1/5'>
                 <p className='text-xs text-orange-400'>Full-Stack Project</p>
@@ -231,9 +227,9 @@ const Portfolio = () => {
           <p link className='text-4xl md:text-3xl  font-semibold'>My Education And Experience</p>
           <p className='text-l'>“Here are the Skills I offer to help you create impactful, responsive, and user-friendly digital experiences."</p>
 
-          <div className="grid mt-4 md:mt-0 md:grid-cols-2 gap-6 w-full md:p-6 ">
+          <div className="grid mt-4 md:mt-0 md:grid-cols-2 gap-10 md:gap-6 w-full md:p-6 ">
 
-              <div className='flex h-full flex-col gap-5 justify-center items-center'>
+              <div className='flex h-full flex-col gap-10 md:gap-5 justify-center items-center'>
 
                 <div className='flex h-full justify-center items-center gap-3'>
                   <div className='flex h-full justify-center items-center p-3 text-3xl border'><FaSchool/></div>
@@ -275,7 +271,7 @@ const Portfolio = () => {
         <div className="w-[92%] md:w-[80%] bg-slate-200 rounded-xl shadow-xl flex flex-col gap-10 md:gap-0 md:flex-row p-5">
       
       <div className="md:w-1/3 flex flex-col items-center justify-center md:border-r pr-4">
-        <p className="text-sm font-semibold mb-2">
+        <p className="text-s font-semibold mb-2">
           Have a project or question in mind? Just send me a message
         </p>
         <p className="text-xs font-semibold mb-3">

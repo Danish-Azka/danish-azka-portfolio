@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link as ScrollLink } from "react-scroll";
+import Aos from 'aos';
+import "aos/dist/aos.css";
 import { FaAngleDown, FaBootstrap, FaCode, FaEnvelope, FaLaptopCode, FaPhone, FaSchool } from 'react-icons/fa';
 import { IoSquareOutline } from 'react-icons/io5';
 import { IoLogoInstagram, IoLogoLinkedin, IoLogoGithub } from 'react-icons/io';
@@ -7,6 +9,9 @@ import { VscGistSecret } from "react-icons/vsc";
 import { PiDeviceRotateBold } from "react-icons/pi";
 import img from './image/navimg.png';
 import gw from './image/gw.jpg';
+import food from './image/food.png'
+import data from './image/data.png'
+import gir from './image/gir.jpg'
 import { LiaCss3, LiaHtml5, LiaJs, LiaReact } from 'react-icons/lia';
 import { SiExpress, SiPostman, SiSequelize } from 'react-icons/si';
 import { RiTailwindCssFill } from 'react-icons/ri';
@@ -14,6 +19,9 @@ import { TypeAnimation } from 'react-type-animation';
 import { FaBuildingColumns } from 'react-icons/fa6';
 
 const Portfolio = () => {
+  useEffect(() => {
+  Aos.init({ duration: 3000 }); // durasi animasi 1 detik
+  }, [])
   const Links = [
     { name: 'Home', link: 'Home' },
     { name: 'Skills', link: 'Skills' },
@@ -28,7 +36,7 @@ const Portfolio = () => {
   return (
     <div className="">
       {/* Navbar */}
-      <div className="fixed flex items-center w-full bg-white justify-between px-2">
+      <div className="fixed flex items-center w-full bg-white justify-between px-2 z-50">
         <div className="flex items-center justify-center">
           <img className="w-[200px]" src={img} alt="Logo" />
         </div>
@@ -39,27 +47,29 @@ const Portfolio = () => {
           }`}
         >
           <ul className="flex lg:flex-row flex-col gap-2 lg:items-center lg:gap-10 text-lg font-semibold px-5">
-  {Links.map((link, index) => (
-    <li key={index}>
-      <ScrollLink
-        to={link.link}       
-        smooth={true}
-        duration={500}
-        offset={-70}          
-        onClick={() => setOpen(false)}
-        className="cursor-pointer hover:text-slate-500"
-      >
-        {link.name}
-      </ScrollLink>
-    </li>
-  ))}
-</ul>
+            {Links.map((link, index) => (
+              <li key={index}>
+                <ScrollLink
+                  to={link.link}       
+                  smooth={true}
+                  duration={500}
+                  offset={-70}          
+                  onClick={() => setOpen(false)}
+                  className="cursor-pointer hover:text-slate-500"
+                >
+                  {link.name}
+                </ScrollLink>
+             </li>
+            ))}
+        </ul>
         </div>
 
         <div className="flex items-center gap-5" >
-          <a href="/CV-Danish-Azka-Rahmat.pdf" download="CV-Danish-Azka-Rahmat.pdf">
-            <button className="md:px-5 rounded-xl text-xs py-2 px-2  text-white font-semibold bg-orange-400">Download CV</button>
-          </a>
+         <a  href="/danish-azka-portfolio/CV-Danish-Azka-Rahmat.pdf" download="CV-Danish-Azka-Rahmat.pdf">
+          <button className="md:px-5 rounded-xl text-xs py-2 px-2 text-white font-semibold bg-orange-400">
+            Download CV
+         </button>
+        </a>
           <div
             onClick={() => setOpen(!open)}
             className={`lg:hidden block font-bold ${open ? 'rotate-45' : ''}`}
@@ -92,7 +102,8 @@ const Portfolio = () => {
               <div>Developer</div>
             </h1>
             <p className="pt-6 md:pt-2">
-              I am Danish Azka Rahmat, a passionate <b>Front-End Developer</b> born in Jakarta on October 24, 2007. I started my tech journey at SMK Letris Indonesia 2 in <b>Software Engineering</b> and now pursue a <b>Bachelor’s degree in Informatics at Universitas Pembangunan Jaya</b>. With a strong interest in programming, Artificial Intelligence, and Cybersecurity, I focus on creating modern, responsive, and user-friendly web applications while striving to grow as a versatile technologist ready for future challenges.            </p>
+              I am Danish Azka Rahmat, a passionate <b>Front-End Developer</b> born in Jakarta on October 24, 2007. I started my tech journey at SMK Letris Indonesia 2 in <b>Software Engineering</b> and now pursue a <b>Bachelor’s degree in Informatics at Universitas Pembangunan Jaya</b>.</p>
+              <p>With a strong interest in programming, Artificial Intelligence, and Cybersecurity, I focus on creating modern, responsive, and user-friendly web applications while striving to grow as a versatile technologist ready for future challenges. </p>
             <button className="md:w-1/3 text-m rounded-xl py-1 text-white font-semibold  bg-orange-400">
               Hire Me
             </button>
@@ -101,7 +112,7 @@ const Portfolio = () => {
 
         <div className="md:w-2/5 flex justify-center">
           <div className="md:w-4/5 flex justify-center bot flex-col gap-7">
-            <img src={gw} alt="Danish Azka Rahmat" />
+            <img data-aos="fade-up" src={gw} alt="Danish Azka Rahmat" />
 
             <div className="flex justify-center items-center gap-4">
               <div className="text-4xl">
@@ -143,8 +154,8 @@ const Portfolio = () => {
         <p link className='text-3xl md:text-2xl  font-semibold'>Skills And Technology</p>
         <p className='text-l '>“Here are the Skills I offer to help you create impactful, responsive, and user-friendly digital experiences."</p>
 
-        <div className="grid mt-4 md:mt-0 md:grid-cols-3 gap-10 md:gap-6 w-full md:p-6 ">
-            <div className="shadow-md p-5 rounded-lg border">
+        <div data-aos="fade-left" className="grid mt-4 md:mt-0 md:grid-cols-3 gap-10 md:gap-6 w-full md:p-6 ">
+            <div  className="shadow-md p-5 rounded-lg border">
                 <h3 className="text-xl font-bold mb-2 flex items-center justify-between">Web Developing <FaLaptopCode className='text-2xl'/></h3>
                 <div className='flex items-center justify-center gap-5 text-5xl md:text-6xl flex-wrap'><LiaJs color='#F0DB4F'/> <LiaHtml5 color='#E34C26'/> <LiaCss3 color='#264DE4'/>  <LiaReact color='#61DBFB'/> </div>
             </div>
@@ -166,11 +177,12 @@ const Portfolio = () => {
       {/* Projects */}
        <div id="Projects" className='w-[92%] mx-auto flex flex-col gap-2 justify-center items-center mt-16 md:mt-8'>
         <p link className='text-4xl md:text-3xl  font-semibold'>My Projects</p>
-        <p className='text-l '>“Here are the Skills I offer to help you create impactful, responsive, and user-friendly digital experiences."</p>
-        <div className="grid md:grid-cols-3 gap-10 md:gap-6 p-6 md:h-100 ">
+        <p className='text-l '>"Here are some collections of projects I have created throughout my academic studies and professional journey."</p>
+        <div data-aos="fade-right" className="grid md:grid-cols-3 gap-10 md:gap-6 p-6 md:h-100 ">
 
             <div className=" flex flex-col justify-center w-full rounded-lg ">
-              <div className="text-xl  font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg p-8 bg-orange-200">
+              <div className="text-xl  font-bold md:mb-2 w-full rounded-lg p-5 bg-orange-200">
+                <img src={food} alt="" />
               </div>
               <div className=' md:h-1/5'>
                 <p className='text-xs text-orange-400'>Landing Page</p>
@@ -186,7 +198,8 @@ const Portfolio = () => {
               </div>
             </div>
             <div className=" flex flex-col justify-center  rounded-lg ">
-              <div className="text-xl font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg p-8 bg-orange-200">
+              <div className="text-xl font-bold md:mb-2 w-full rounded-lg p-5 bg-orange-200">
+                <img src={data} alt="" />
               </div>
               <div className=' md:h-1/5'>
                 <p className='text-xs text-orange-400'>Crud Implemtation</p>
@@ -202,7 +215,8 @@ const Portfolio = () => {
               </div>
             </div>
             <div className=" flex flex-col justify-center  rounded-lg ">
-              <div className="text-xl font-bold md:mb-2 w-full h-full  md:h-4/5 rounded-lg p-8 bg-orange-200">
+              <div className="text-xl font-bold md:mb-2 w-full rounded-lg p-5 bg-orange-200">
+                <img src={gir} alt="" />
               </div>
               <div className=' md:h-1/5'>
                 <p className='text-xs text-orange-400'>Full-Stack Project</p>
@@ -225,7 +239,7 @@ const Portfolio = () => {
       <div id="Background" className='mt-10 flex justify-center items-center bg-orange-400 py-10'>
         <div className='w-[92%] mx-auto flex justify-center items-center flex-col gap-2'>
           <p link className='text-4xl md:text-3xl  font-semibold'>My Education And Experience</p>
-          <p className='text-l'>“Here are the Skills I offer to help you create impactful, responsive, and user-friendly digital experiences."</p>
+          <p className='text-l'>“Here is a brief overview of my educational and professional background."</p>
 
           <div className="grid mt-4 md:mt-0 md:grid-cols-2 gap-10 md:gap-6 w-full md:p-6 ">
 
@@ -248,14 +262,15 @@ const Portfolio = () => {
               </div>
 
               <div className='flex h-full w-full justify-center items-center'>
-                <div className='h-full w-full bg-white rounded-xl flex justify-center items-center p-5'>
+                <div className='h-full w-full bg-white rounded-xl flex justify-center items-center p-3 md:p-5'>
                     <div className='flex h-full justify-center items-center gap-3'>
                   <div className='flex justify-center items-center p-3 text-3xl border'><FaCode/></div>
                   <div className='flex flex-col'>
                     <p className='text-xs'>Internship, PT Ebdesk teknologi (3 month) </p>
-                    <p>I did an internship for 3 months at PT Ebdesk Teknologi as a <b>Front-End Developer </b>.</p>
-                    <a href="/Danish Azka Rahmat - Internship Certificate - FE Developer.pdf" download="Internship-Certificate-Danish-Azka-Rahmat.pdf">
-                      <button className="px-5 rounded-xl py-1 text-white font-semibold bg-orange-400 text-xs">Download Certificate</button>
+                    <p className='text-[12px] md:text-[14px]'>During my 3-month internship at PT Ebdesk Teknologi as a <b>Front-End Developer</b></p>
+                    <p className='text-[12px] md:text-[14px]'> I worked on developing and optimizing interactive user interfaces using modern web technologies.</p>
+                    <a  href="/danish-azka-portfolio/Internship-Certificate-Danish.pdf" download="CV-Internship-Certificate-Danish.pdf">
+                      <button className="md:px-5 rounded-xl text-xs py-2 px-2 text-white font-semibold bg-orange-400">Download Certificate</button>
                     </a>
                   </div>
                   </div>
@@ -346,18 +361,13 @@ const Portfolio = () => {
             placeholder="Subject"
             className="border rounded-lg p-1 col-span-2"
           />
-          <select className="border rounded-lg p-1 col-span-2 md:col-span-1">
+          <select className="border rounded-lg p-1 col-span-2 md:col-span-2">
             <option>Services</option>
             <option>Internship</option>
             <option>Part time worker</option>
             <option>freelance</option>
           </select>
-          <select className="border rounded-lg p-1 col-span-2 md:col-span-1">
-            <option>Budgets</option>
-            <option>$100 - $500</option>
-            <option>$500 - $1000</option>
-            <option>$1000+</option>
-          </select>
+         
           <textarea
             placeholder="Message"
             rows="3"
